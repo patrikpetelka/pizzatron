@@ -1,3 +1,449 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body {
+  background: #fafafa;
+}
+.full-height {
+  height: 100%;
+}
+
+.toppings-container {
+  background: #ffffff;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.03);
+  border-radius: 56px;
+  width: 98px;
+  height: 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.icon-container {
+  width: 76px;
+  height: 76px;
+  background: #ffffff;
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.03);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toppings-container p {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #383838;
+}
+
+.box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ececf3;
+  border-radius: 72px;
+  width: 438px;
+  height: 88px;
+}
+
+.order-check input[type="number"] {
+  width: 60px;
+  height: 36px;
+  background: #ececf3;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.order-check button {
+  background: #b95de4;
+  border-radius: 48px;
+  width: 197px;
+  height: 68px;
+}
+
+.order-check {
+  width: 774px;
+  height: 148px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  backdrop-filter: blur(12px);
+  border-radius: 28px 28px 0px 0px;
+}
+
+.price-group {
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.price {
+  color: #b95de4;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.text-secondary {
+  color: #b9b9b9;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.line {
+  border: 1px dashed #dbdbdb;
+  transform: rotate(90deg);
+  width: 52px;
+}
+
+.my-node-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.my-node-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.button-secondary:focus {
+  background-color: #ffffff;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.button-secondary__active {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  padding: 20px 52px;
+  box-sizing: border-box;
+  border-radius: 36px;
+}
+
+/* .button-secondary:active {
+  background-color: #ffffff;
+} */
+
+input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+label {
+  display: inline-block;
+  padding: 24px 60px;
+  box-sizing: border-box;
+  border-radius: 36px;
+  font-size: 16px;
+}
+
+input[type="radio"]:hover + label {
+  border: 2px solid #ffffff;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+input[type="radio"]:checked + label {
+  background-color: #ffffff;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.button-secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  padding: 20px 52px;
+  box-sizing: border-box;
+  border-radius: 36px;
+}
+
+.box form {
+  margin-left: 20px;
+}
+input[type="text"] {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.input,
+.passwordInput,
+.emailInput,
+.nameInput,
+.textarea {
+  box-shadow: rgba(0, 0, 0, 0.11);
+  border: none;
+  background: #ffffff;
+  border-radius: 3rem;
+  height: 3rem;
+  width: 100%;
+  outline: none;
+  padding: 0 3rem;
+  font-size: 1rem;
+}
+@media (min-width: 1100px) {
+  .input,
+  .passwordInput,
+  .emailInput,
+  .nameInput,
+  .textarea {
+    padding: 0 5rem;
+  }
+}
+
+.textarea {
+  padding: 1rem 1.5rem;
+  height: 300px;
+  border-radius: 1rem;
+}
+
+.primaryButton {
+  cursor: pointer;
+  background: #b95de4;
+  border-radius: 1rem;
+  padding: 0.85rem 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageContainer,
+.offers,
+.profile,
+.listingDetails,
+.category,
+.explore {
+  margin: 1rem;
+}
+@media (min-width: 1024px) {
+  .pageContainer,
+  .offers,
+  .profile,
+  .listingDetails,
+  .category,
+  .explore {
+    margin: 3rem;
+  }
+}
+
+.pageHeader {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.nameInput {
+  margin-bottom: 2rem;
+  background: url("./assets/badgeIcon.svg") #ffffff 2.5% center no-repeat;
+}
+
+.emailInput {
+  margin-bottom: 2rem;
+  background: url("./assets/personIcon.svg") #ffffff 2.5% center no-repeat;
+}
+
+.passwordInputDiv {
+  position: relative;
+}
+
+.passwordInput {
+  margin-bottom: 2rem;
+  background: url("./assets/lockIcon.svg") #ffffff 2.5% center no-repeat;
+}
+
+.showPassword {
+  cursor: pointer;
+  position: absolute;
+  top: -4%;
+  right: 1%;
+  padding: 1rem;
+}
+
+.forgotPasswordLink {
+  cursor: pointer;
+  color: #b95de4;
+  font-weight: 600;
+  text-align: right;
+}
+
+.signInBar,
+.signUpBar {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: inherit;
+}
+
+.signInButton,
+.signUpButton,
+.signInText,
+.signUpText {
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .signInBar,
+  .signUpBar {
+    justify-content: start;
+  }
+}
+
+.signInText,
+.signUpText {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.signInButton,
+.signUpButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #b95de4;
+  border-radius: 50%;
+}
+@media (min-width: 1024px) {
+  .signInButton,
+  .signUpButton {
+    margin-left: 3rem;
+  }
+}
+
+.socialLogin {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialIconDiv {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem;
+  margin: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.socialIconImg {
+  width: 100%;
+}
+
+.registerLink {
+  margin-top: 4rem;
+  color: #b95de4;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logOut {
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #b95de4;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.profileDetailsHeader {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+.personalDetailsText {
+  font-weight: 600;
+}
+
+.profileCard {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileName,
+.profileEmail,
+.profileAddress,
+.profileAddressActive,
+.profileEmailActive,
+.profileNameActive {
+  all: unset;
+  margin: 0.3rem 0;
+  font-weight: 600;
+  width: 100%;
+}
+.profileNameActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+.profileEmail,
+.profileAddress,
+.profileAddressActive,
+.profileEmailActive {
+  font-weight: 500;
+}
+.profileEmailActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+.profileAddressActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
