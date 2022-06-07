@@ -9,22 +9,31 @@ import SignUp from "./modules/User/SignUp";
 import SignIn from "./modules/User/SignIn";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Navbar from "./components/Navbar";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
 
 function App() {
   return (
-    <div className="container mx-auto">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/order-config" element={<OrderConfiguration />} />
-          <Route path="/order-details" element={<OrderModal />} />
-          <Route path="/order-completed" element={<OrderCompleted />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-        </Routes>
-      </Router>
-    </div>
+    <>
+      <RecoilRoot>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/order-config" element={<OrderConfiguration />} />
+            <Route path="/order-details" element={<OrderModal />} />
+            <Route path="/order-completed" element={<OrderCompleted />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/sign-up" element={<SignUp />} />
+          </Routes>
+        </Router>
+      </RecoilRoot>
+    </>
   );
 }
 

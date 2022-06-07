@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as MyLogo } from "../../../assets/logo.svg";
 
 type Props = {};
 
 const OrderCheck = (props: Props) => {
+  const navigate = useNavigate();
+  const onClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    navigate("/order-details");
+  };
+
   return (
     <div className="order-check flex justify-around items-center mt-24">
       <div className="mb-20">
@@ -21,7 +27,9 @@ const OrderCheck = (props: Props) => {
         </div>
       </div>
       <div className="">
-        <button className="text-white font-medium">Buy Pizza! Pizza!</button>
+        <button className="text-white font-medium" onClick={onClick}>
+          Buy Pizza! Pizza!
+        </button>
       </div>
     </div>
   );

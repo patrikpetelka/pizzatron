@@ -10,6 +10,7 @@ input::-webkit-inner-spin-button {
 body {
   background: #fafafa;
 }
+
 .full-height {
   height: 100%;
 }
@@ -26,17 +27,44 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.toppings-container__selected {
+  background: #e5c3f5;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.03);
 }
 
 .icon-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 76px;
+  height: 76px;
+}
+
+.icon-container::before {
+  content: "";
+  position: absolute;
   width: 76px;
   height: 76px;
   background: #ffffff;
   box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.03);
   border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 30%;
+}
+
+.icon-container img {
+  position: relative;
 }
 
 .toppings-container p {
@@ -182,6 +210,20 @@ input[type="radio"]:checked + label {
   padding: 20px 52px;
   box-sizing: border-box;
   border-radius: 36px;
+}
+.container-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.modal-container {
+  height: 600px;
+  width: 800px;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(247, 247, 247, 1);
+  box-shadow: 0px 20px 28px 0px rgba(0, 0, 0, 0.03);
 }
 
 .box form {
@@ -387,7 +429,7 @@ input[type="text"]:focus {
 
 .logOut {
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
