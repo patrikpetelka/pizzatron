@@ -8,12 +8,16 @@ import meat from "../../assets/icons/meat.png";
 
 export const getToppings = () => {
   return [
-    { name: "Chilli", image: chilli },
-    { name: "Corn", image: corn },
-    { name: "Egg", image: egg },
-    { name: "Pineapple", image: pineapple },
-    { name: "Meat", image: meat },
-    { name: "Shrooms", image: shrooms },
-    { name: "Bacon", image: bacon },
+    {
+      name: "Chilli",
+      image: chilli,
+      price: 1.5,
+    },
+    { name: "Corn", image: corn, price: 1.5 },
+    { name: "Egg", image: egg, price: 1.5 },
+    { name: "Pineapple", image: pineapple, price: 2 },
+    { name: "Meat", image: meat, price: 2.5 },
+    { name: "Shrooms", image: shrooms, price: 1.5 },
+    { name: "Bacon", image: bacon, price: 2 },
   ];
 };

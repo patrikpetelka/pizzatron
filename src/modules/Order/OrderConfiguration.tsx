@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Button from "../../components/Button";
-import { setConstantValue } from "typescript";
 import OrderCheck from "./components/OrderCheck";
 import OrderToppings from "./components/OrderToppings";
-import { getToppings } from "../Mocks/FakeData";
-
+import { getToppings } from "../Mocks/ToppingsData";
+import { extraPrice } from "./atoms/extraPrice";
+import { useRecoilValue } from "recoil";
 type Props = {};
 
 const OrderConfiguration = (props: Props) => {
   const [discountCode, setDiscountCode] = useState("");
-
+  const price = useRecoilValue(extraPrice);
   const toppings = getToppings();
 
   const onChange = (e: any) => {
@@ -25,6 +25,7 @@ const OrderConfiguration = (props: Props) => {
         <div className="flex justify-center gap-4">
           {toppings.map((t) => OrderToppings(t))}
         </div>
+        <p className="price-extra">Total price +${price}</p>
         <p className="text-4xl mt-24 mb-8 text-center">Pizza! Pizza! size</p>
         <div className="box">
           <input type="radio" id="s" name="pizza_size" value="S" />
