@@ -1,21 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../../components/Navbar";
-import Button from "../../components/Button";
 import OrderCheck from "./components/OrderCheck";
 import OrderToppings from "./components/OrderToppings";
+import { PizzaSize } from "./components/PizzaSize";
 import { getToppings } from "../Mocks/ToppingsData";
-import { extraPrice } from "./atoms/extraPrice";
+import { extraPrice } from "./state/atoms";
 import { useRecoilValue } from "recoil";
+import { Discount } from "./components/Discount";
 type Props = {};
 
 const OrderConfiguration = (props: Props) => {
-  const [discountCode, setDiscountCode] = useState("");
   const price = useRecoilValue(extraPrice);
   const toppings = getToppings();
-
-  const onChange = (e: any) => {
-    setDiscountCode(e.target.value);
-  };
 
   return (
     <>
@@ -26,30 +22,8 @@ const OrderConfiguration = (props: Props) => {
           {toppings.map((t) => OrderToppings(t))}
         </div>
         <p className="price-extra">Total price +${price}</p>
-        <p className="text-4xl mt-24 mb-8 text-center">Pizza! Pizza! size</p>
-        <div className="box">
-          <input type="radio" id="s" name="pizza_size" value="S" />
-          <label htmlFor="s">S</label>
-          <input type="radio" id="m" name="pizza_size" value="M" />
-          <label htmlFor="m">M</label>
-          <input type="radio" id="l" name="pizza_size" value="L" />
-          <label htmlFor="l">L</label>
-        </div>
-        <p className="text-4xl mt-20 mb-8 text-center">Get the discount</p>
-        <div className="box">
-          <form>
-            <input
-              type="text"
-              className="discountInput"
-              id="discount"
-              value={discountCode}
-              placeholder="Enter discount code"
-              onChange={onChange}
-              background-color="transparent"
-            />
-          </form>
-          <button className="button-secondary">Apply</button>
-        </div>
+        <PizzaSize />
+        <Discount />
         <OrderCheck />
       </div>
     </>

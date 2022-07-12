@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useRecoilState, atom } from "recoil";
-import { extraPrice } from "../atoms/extraPrice";
+import { useRecoilState } from "recoil";
+import { extraPrice } from "../state/atoms";
 
 interface ToppingsComponent {
   image: string;

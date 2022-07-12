@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as MyLogo } from "../../../assets/logo.svg";
+import { totalPrice } from "../state/totalPrice";
+import { useRecoilValue } from "recoil";
 
 type Props = {};
 
@@ -9,6 +11,7 @@ const OrderCheck = (props: Props) => {
   const onClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     navigate("/order-details");
   };
+  const price = useRecoilValue(totalPrice);
 
   return (
     <div className="order-check flex justify-around items-center mt-24">
@@ -22,7 +25,7 @@ const OrderCheck = (props: Props) => {
         </div>
         <div className="line"></div>
         <div className="price-group">
-          <p className="price">22.50$</p>
+          <p className="price">{price}</p>
           <p className="text-secondary">Order Total</p>
         </div>
       </div>
