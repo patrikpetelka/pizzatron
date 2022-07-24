@@ -14,7 +14,7 @@ const OrderConfiguration = (props: Props) => {
   const toppings = getToppings();
 
   return (
-    <>
+    <main>
       <Navbar />
       <div className="container mx-auto flex flex-col justify-center items-center">
         <p className="text-4xl my-10 text-center">Toppings! Toppings!</p>
@@ -26,7 +26,7 @@ const OrderConfiguration = (props: Props) => {
         <Discount />
         <OrderCheck />
       </div>
-    </>
+    </main>
   );
 };
 

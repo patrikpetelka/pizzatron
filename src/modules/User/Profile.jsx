@@ -66,7 +66,7 @@ function Profile() {
   };
 
   return (
-    <div className="profile">
+    <div className="p-10 container">
       <header className="profileHeader">
         <p className="container">My Profile</p>
         <button type="button" className="logOut" onClick={onLogout}>

@@ -6,7 +6,7 @@ export const PizzaSize: React.FC = () => {
   return (
     <section>
       <p className="text-4xl mt-24 mb-8 text-center">Pizza! Pizza! size</p>
-      <div className="box">
+      <div className="form">
         <input
           type="radio"
           id="s"
@@ -14,7 +14,9 @@ export const PizzaSize: React.FC = () => {
           value={7}
           onChange={() => setSizeState(7)}
         />
-        <label htmlFor="s">S</label>
+        <label className="radio-button" htmlFor="s">
+          S
+        </label>
         <input
           type="radio"
           id="m"
@@ -22,15 +24,20 @@ export const PizzaSize: React.FC = () => {
           value={10}
           onChange={() => setSizeState(10)}
         />
-        <label htmlFor="m">M</label>
+        <label className="radio-button" htmlFor="m">
+          M
+        </label>
         <input
+          className="radio-button"
           type="radio"
           id="l"
           name="pizza_size"
           value={15}
           onChange={() => setSizeState(15)}
         />
-        <label htmlFor="l">L</label>
+        <label className="radio-button" htmlFor="l">
+          L
+        </label>
       </div>
     </section>
   );

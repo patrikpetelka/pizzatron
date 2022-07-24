@@ -46,7 +46,6 @@ function SignUp() {
         // ..
       });
     navigate("/order-config");
-    /*   */
 
     const formDataCopy = { ...formData };
     delete formDataCopy.password;
@@ -57,14 +56,14 @@ function SignUp() {
 
   return (
     <>
-      <div className="pageContainer">
+      <div className="p-10 container">
         <header>
-          <p className="pageHeader">Register for Pizza!</p>
+          <p className="mb-6 pageHeader">Register for Pizza!</p>
         </header>
 
         <form onSubmit={onSubmit}>
           <input
-            type="text"
+            type="name"
             className="nameInput"
             placeholder="Name"
             id="name"

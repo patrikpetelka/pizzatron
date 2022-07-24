@@ -3,23 +3,24 @@ import { useSetRecoilState } from "recoil";
 import { discount } from "../state/atoms";
 
 export const Discount: React.FC = () => {
-  const [discountCode, setDiscountCode] = useState<number>(0);
+  const [discountCode, setDiscountCode] = useState<string>("");
   const setDiscountState = useSetRecoilState(discount);
-  const onChange = (e: any) => {
-    setDiscountCode(e.target.value);
-  };
   const clickHandler = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     if (discountCode !== null) {
-      setDiscountState(0.1);
+      setDiscountState(discountCode);
     } else {
-      setDiscountState(0);
+      setDiscountState("");
     }
+  };
+
+  const onChange = (e: any) => {
+    e.preventDefault();
   };
 
   return (
     <section>
       <p className="text-4xl mt-20 mb-8 text-center">Get the discount</p>
-      <div className="box">
+      <div className="form">
         <form>
           <input
             type="text"
@@ -27,7 +28,7 @@ export const Discount: React.FC = () => {
             id="discount"
             value={discountCode}
             placeholder="Enter discount code"
-            onChange={onChange}
+            onChange={(e) => setDiscountCode(e.target.value)}
             background-color="transparent"
           />
         </form>

@@ -5,9 +5,10 @@ import egg from "../../assets/icons/egg.png";
 import pineapple from "../../assets/icons/pineapple.png";
 import shrooms from "../../assets/icons/shrooms.png";
 import meat from "../../assets/icons/meat.png";
+import { toppingsList } from "../Order/state/atoms";
 
 export const getToppings = () => {
-  return [
+  const toppings = [
     {
       name: "Chilli",
       image: chilli,
@@ -20,4 +21,6 @@ export const getToppings = () => {
     { name: "Shrooms", image: shrooms, price: 1.5 },
     { name: "Bacon", image: bacon, price: 2 },
   ];
+
+  return toppings;
 };

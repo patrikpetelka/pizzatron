@@ -40,7 +40,7 @@ function Navbar() {
     <header className="my-4">
       <nav className="navbarNav">
         <ul className="m-0 p-0 flex justify-evenly items-center">
-          <li className="navbarListItem" onClick={() => navigate("/offers")}>
+          <li className="navbarListItem">
             <p>pizzÁtron</p>
           </li>
           <li
